@@ -10,10 +10,11 @@ export default function Login() {
         backgroundRepeat: 'no-repeat' }}>
       <Card sx={{ width: 400, padding: 3 }}>
         <Stack spacing={2}>
+          <img src="/images.jpg" alt="Logo"  style={{width: '100px', height: 'auto', alignSelf: "center"}} />
           <Typography variant="h5" align="center">Login</Typography>
           <TextField label="Email" variant="outlined" fullWidth />
           <TextField label="Senha" type="password" variant="outlined" fullWidth />
-          <Button variant="contained" sx={{ backgroundColor: '#f8240f', '&:hover': { backgroundColor: '#a01208' } }} fullWidth>Entrar</Button>
+          <Button variant="contained" component={Link} to="/Menu" sx={{ backgroundColor: '#f8240f', '&:hover': { backgroundColor: '#a01208' } }} fullWidth>Entrar</Button>
           <Typography variant="h9" align="center" component={Link} to="/Reset"  >Esqueci minha senha</Typography>
         </Stack>
       </Card>

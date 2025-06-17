@@ -14,7 +14,7 @@ export default function Reset() {
             
       <Card sx={{ width: 400, padding: 3 }}>
         <Stack spacing={2}>
-          
+          <img src="/images.jpg" alt="Logo"  style={{width: '100px', height: 'auto', alignSelf: "center"}} />
           <Typography variant="h6" align='center' padding={3}>RESETAR SENHA</Typography>
           <Typography  align='center' padding={1}>Digite seu email para receber um link de redefinição de senha:</Typography>
           <TextField label="email" align='center' >Digite seu email para receber um link de redefinição de senha</TextField>

@@ -5,6 +5,7 @@ import Loader from "./components/Loader";
 
 const Login = lazy(() => import("./pages/Login"));
 const Reset = lazy(() => import("./pages/Login/includes/Reset"));
+const Menu = lazy(() => import("./pages/Login/includes/Menu"));
 
 const AppRouter = () => {
   return (
@@ -13,6 +14,8 @@ const AppRouter = () => {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/Reset" element={<Reset />} />
+          <Route path="/Menu" element={<Menu />} />
+          
         </Routes>
       </Suspense>
     </BrowserRouter>
