@@ -11,22 +11,10 @@ const Login = () => {
   );
 };
 
-const ResetPage = () => {
-  return (
-    <div>
-      <Reset />
-    </div>
-  );
-}
 
 
-const MenuPage = () => {
-  return (
-    <div>
-      <h1>Menu Page</h1>
-    </div>
-  );
-} 
+
+
 
 
 
