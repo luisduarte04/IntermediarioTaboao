@@ -1,31 +1,31 @@
-import {
-  Drawer,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Toolbar,
-} from "@mui/material";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import AnalyticsIcon from "@mui/icons-material/Insights";
-import {Link} from 'react-router-dom';
+import * as React from 'react';
+import { Drawer, List, ListItem, ListItemText, Toolbar } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-const Sidebar = () => {
+interface SidebarProps {
+  open: boolean;
+  onClose: (event: React.KeyboardEvent | React.MouseEvent) => void;
+  width?: number;
+}
+
+export default function SidebarMenu({ open, onClose, width = 200 }: SidebarProps) {
   return (
-    <Drawer open={false} variant="persistent" anchor="left">
+    <Drawer
+      anchor="left"
+      open={open}
+      onClose={onClose}
+      variant="temporary"
+      PaperProps={{ sx: { width } }}
+    >
       <Toolbar />
       <List>
-        <ListItem button   component={Link} to="/dashboard">
-          <ListItemIcon><DashboardIcon /></ListItemIcon>
-          <ListItemText  primary="Dashboard"  />
+        <ListItem button component={Link} to="/dashboard" onClick={onClose}>
+          <ListItemText primary="Dashboard" />
         </ListItem>
-        <ListItem button  component={Link} to="/analytics">
-          <ListItemIcon><AnalyticsIcon /></ListItemIcon>
+        <ListItem button component={Link} to="/analytics" onClick={onClose}>
           <ListItemText primary="Analytics" />
         </ListItem>
       </List>
     </Drawer>
   );
-};
-
-export default Sidebar;
+}
