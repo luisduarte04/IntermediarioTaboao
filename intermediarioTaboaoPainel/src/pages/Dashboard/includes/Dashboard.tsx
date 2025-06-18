@@ -1,11 +1,17 @@
-
+import { DialogContent } from '@mui/material'
+import { Grid, Stack } from '@mui/system'
 import React from 'react'
 
 export default function Dashboard() {
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <p>Welcome to the dashboard!</p>
-    </div>
+    <DialogContent>
+      <Grid>
+        <Stack spacing={2} sx={{ padding: 2, justifyContent: 'center', alignItems: 'center' }}>
+          <h1>Dashboard</h1>
+          <p>Welcome to the dashboard! aaaaaaaaaaaaaaaaaaaaa</p>
+          <p>Olá Mundo</p>
+        </Stack>
+      </Grid>
+    </DialogContent>
   )
 }

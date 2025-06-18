@@ -12,7 +12,7 @@ import {Link} from 'react-router-dom';
 
 const Sidebar = () => {
   return (
-    <Drawer variant="permanent" anchor="left">
+    <Drawer open={false} variant="persistent" anchor="left">
       <Toolbar />
       <List>
         <ListItem button   component={Link} to="/dashboard">
