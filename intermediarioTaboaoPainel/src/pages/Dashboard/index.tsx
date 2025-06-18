@@ -1,26 +1,23 @@
 import React from 'react'
-//import Dashboard from './includes/Dashboard'
-import Sidebar from 'components/Sidebar'  
+import Sidebar from 'components/Sidebar'
 import Header from 'components/Header'
-import Footer from 'components/Footer'  
-import { Typography } from '@mui/material';
+import Footer from 'components/Footer'
+import { Box } from '@mui/material'
+import Dashboard from './includes/Dashboard'
 
-export default function index() {
+const Index = () => {
   return (
-    <div>
+    <Box minHeight="100vh" display="flex" flexDirection="column">
       <Header />
-      <Sidebar />
-      <div>
-        <Typography variant="h4" component="h1" gutterBottom>
-          MENU DASHBOARD
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          Iniciando Dashboard para teste
-        </Typography>
-      </div>
-    <div>
-      <Footer /> 
-    </div>
-    </div>
-  )
-}
+      <Box display="flex" flex={1}>
+        <Sidebar />
+        <Box display="flex" flex={1} justifyContent="center" alignItems="flex-start" p={2} >
+          <Dashboard />
+        </Box>
+      </Box>
+      <Footer />
+    </Box>
+  );
+};
+
+export default Index
