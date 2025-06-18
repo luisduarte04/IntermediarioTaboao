@@ -7,10 +7,7 @@ import React from 'react'
 
 export default function Reset() {
   return (
-    <Box sx={{ width: '100%', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#dbdbdb' , backgroundImage: 'url("/images.jpg")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'}}>
+    <Box sx={{ width: '100%', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center',backgroundColor: '#fffaff'}}>
             
       <Card sx={{ width: 400, padding: 3 }}>
         <Stack spacing={2}>
