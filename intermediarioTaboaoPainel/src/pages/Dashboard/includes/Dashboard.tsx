@@ -8,7 +8,7 @@ export default function Dashboard() {
       <Grid>
         <Stack spacing={2} sx={{ padding: 2, justifyContent: 'center', alignItems: 'center' }}>
           <h1>Dashboard</h1>
-          <p>Welcome to the dashboard! aaaaaaaaaaaaaaaaaaaaa</p>
+          <p>Tela do Dashboard</p>
           <p>Olá Mundo</p>
         </Stack>
       </Grid>
