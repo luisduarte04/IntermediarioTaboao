@@ -2,17 +2,17 @@
 import express from 'express';
 import cors from 'cors';
 import sequelize from './config/database.js';
-import authRoutes from './routes/authRoutes.js';  // 👈 NOVA IMPORTAÇÃO
+import authRoutes from './routes/authRoutes.js';  
 
 const app = express();
 const PORT = 3000;
 
-// Middlewares
+
 app.use(cors());
 app.use(express.json());
 
 // CONECTAR AS ROTAS DE AUTENTICAÇÃO
-app.use('/auth', authRoutes);  // 👈 NOVA LINHA
+app.use('/auth', authRoutes);  
 
 // TESTAR CONEXÃO COM BANCO 
 async function testConnection() {
@@ -23,16 +23,16 @@ async function testConnection() {
     console.error('❌ Erro ao conectar com MySQL:', error.message);
   }
 }
-
-// Chama o teste
 testConnection();
 
-// Rota de teste (mantemos para verificar se o servidor funciona)
+
+// Rota de teste (manter para verificar se o servidor funciona)
 app.get('/', (req, res) => {
   res.json({ message: 'API funcionando!' });
 });
 
-// 📊 LISTAR TODAS AS ROTAS DISPONÍVEIS
+
+
 app.get('/routes', (req, res) => {
   res.json({
     message: 'Rotas disponíveis:',
@@ -45,6 +45,6 @@ app.get('/routes', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Servidor rodando na porta ${PORT}`);
-  console.log(`📝 Cadastro disponível em: http://localhost:${PORT}/auth/cadastro`);
+  console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`Cadastro disponível em: http://localhost:${PORT}/auth/cadastro`);
 });
