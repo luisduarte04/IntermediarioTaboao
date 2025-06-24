@@ -17,6 +17,19 @@ const cadastro = async (req, res) => {
         mensagem: 'Todos os campos são obrigatórios!'
       });
     }
+
+    function validarEmail(email) {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+    }
+
+    if (!validarEmail(email)) {
+      console.log('Email inválido');
+      return res.status(400).json({
+        sucesso: false,
+        mensagem: 'Formato de email inválido!'
+      });
+    }
     
     console.log('Verificando se email já existe...');
     const emailExiste = await Cadastro.findOne({
