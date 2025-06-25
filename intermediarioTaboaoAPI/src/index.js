@@ -1,7 +1,7 @@
 // src/index.js
 import express from 'express';
 import cors from 'cors';
-import sequelize from './config/database.js';
+import sequelize from '../config/database.js';
 import authRoutes from './routes/authRoutes.js';  
 
 const app = express();
@@ -27,7 +27,7 @@ testConnection();
  
 
 
-// Rota de teste (manter para verificar se o servidor funciona)
+// Rota de teste 
 app.get('/', (req, res) => {
   res.json({ message: 'API funcionando!' });
 });
