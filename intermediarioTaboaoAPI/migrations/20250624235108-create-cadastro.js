@@ -21,7 +21,10 @@ export async function up(queryInterface, Sequelize) {
     },
     senha: {
       type: Sequelize.STRING(100),
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: true 
+      }
     }
   });
 }

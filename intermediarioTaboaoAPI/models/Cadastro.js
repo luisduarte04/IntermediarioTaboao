@@ -20,7 +20,10 @@ export default (sequelize, DataTypes) => {
     },
     senha: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: true 
+    }
     }
   }, {
     tableName: 'cadastros',

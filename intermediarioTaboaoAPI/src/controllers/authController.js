@@ -1,5 +1,7 @@
 import bcrypt from 'bcrypt';
 import db from '../../models/index.js';
+import jwt from 'jsonwebtoken';
+
 
 const { Cadastro } = db;
 
@@ -110,7 +112,7 @@ const login = async (req, res) => {
       where: { email: email }
     });
     
-    // VERIFICAR SE USUÁRIO EXISTE
+    //
     if (!usuario) {
       console.log('Usuário não encontrado');
       return res.status(401).json({
@@ -133,6 +135,11 @@ const login = async (req, res) => {
     
     console.log('Senha verificada com sucesso');
     
+
+    const token = jwt.sign(
+      { id: usuario.id_cadastro, nome: usuario.nome, email: usuario.email, nascimento: usuario.nascimento },
+      process.env.JWT_SECRET
+    );
     res.status(200).json({
       sucesso: true,
       mensagem: 'Login realizado com sucesso!',
@@ -141,7 +148,8 @@ const login = async (req, res) => {
         nome: usuario.nome,
         email: usuario.email,
         nascimento: usuario.nascimento
-      }
+      },
+      access_token: token
     });
     
     console.log(`Login bem-sucedido para: ${usuario.nome}`);
