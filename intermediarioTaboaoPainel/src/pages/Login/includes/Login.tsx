@@ -17,6 +17,7 @@ export default function Login() {
     try {
       const resp = await axios.post('http://localhost:3000/auth/login', form);
       if (resp.data.sucesso) {
+        localStorage.setItem('access_token', resp.data.access_token);
         setMensagem('Login realizado com sucesso!');
         setTimeout(() => navigate('/Dashboard'), 1000);
       } else {

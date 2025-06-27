@@ -22,8 +22,8 @@ export default function SidebarMenu({ open, onClose, width = 200 }: SidebarProps
         <ListItem button component={Link} to="/dashboard" onClick={onClose}>
           <ListItemText primary="Dashboard" />
         </ListItem>
-        <ListItem button component={Link} to="/analytics" onClick={onClose}>
-          <ListItemText primary="Analytics" />
+        <ListItem button component={Link} to="/" onClick={onClose}>
+          <ListItemText primary="Teste" />
         </ListItem>
       </List>
     </Drawer>

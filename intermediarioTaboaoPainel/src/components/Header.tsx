@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AppBar, Toolbar, IconButton, Avatar, Menu, MenuItem, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useNavigate } from "react-router-dom";
 
 interface HeaderProps {
   onMenuClick: (event: React.MouseEvent) => void;
@@ -9,6 +10,15 @@ interface HeaderProps {
 const Header = ({ onMenuClick }: HeaderProps) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    localStorage.removeItem('access_token')
+    navigate('/')
+    
+  }
+
+  
 
   return (
     <AppBar position="static" color="default" elevation={1}>
@@ -25,7 +35,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
           open={open}
           onClose={() => setAnchorEl(null)}
         >
-          <MenuItem onClick={() => setAnchorEl(null)}>Logout</MenuItem>
+          <MenuItem onClick={(handleLogout)}>Sair</MenuItem>
         </Menu>
       </Toolbar>
     </AppBar>
